@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h2>The Posts</h2>
+    {% for post in posts %}
+    <div class="border border-black border-2 rounded p-3 mb-4">
+        <p class="mb-4">{{ post.createdAt|date("j F, Y H:i") }}</p>
+        {% for image in post.images %}
+            <img src="{{ vich_uploader_asset(image, "imageFile") }}"  class="img-fluid" />
+        {% endfor %}
+        <h3 class="mb-4">{{ post.title }}</h3>
+        <p class="mb-4">{{ post.content }}</p>
+        <a class="btn btn-primary" href="{{ path('show_post', {id:post.id}) }}">See more</a>
+    </div>
+    {% endfor %}
+{% endblock %}
