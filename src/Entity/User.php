@@ -34,7 +34,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\OneToMany(mappedBy: 'author', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'author', cascade: ['persist', 'remove'])]
     private ?Post $post = null;
 
     public function getId(): ?int
