@@ -14,9 +14,8 @@
             {% endfor %}
             <h4>{{ post.title }}</h4>
             <p>{{ post.content }}</p>
-            <form method="post">
+
             <a class="btn btn-danger" href="{{ path('delete_post', {id:post.id}) }}">Delete</a>
-            </form>
             <a class="btn btn-primary" href="{{ path('edit_post', {id:post.id}) }}">Edit</a>
             <a class="btn btn-primary" href="{{ path('image', {id:post.id}) }}">Add image</a>
         </div>
