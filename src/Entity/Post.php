@@ -36,7 +36,7 @@ class Post
     #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'post')]
     private Collection $images;
 
-    #[ORM\OneToOne(inversedBy: 'post', cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'post')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $author = null;
 
