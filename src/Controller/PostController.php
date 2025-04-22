@@ -108,7 +108,7 @@ final class PostController extends AbstractController
     public function addImage(Post $post, Request $request, EntityManagerInterface $manager): Response
     {
         if ($this->getUser()===null) {
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('app_login');
         }
         if ($post->getAuthor()!==$this->getUser()) {
             return $this->redirectToRoute('posts');
